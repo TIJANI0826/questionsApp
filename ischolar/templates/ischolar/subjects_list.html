@@ -1,0 +1,9 @@
+{% block content %}
+
+    <ol type="1">
+        {% for subject in subjects %}
+            <h2></h2>
+            <li>{{ subject.name }}</li>
+        {% endfor %}
+    </ol>
+{% endblock %}

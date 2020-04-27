@@ -1,0 +1,68 @@
+{% load static %}
+    <title>Index</title>
+<link rel="stylesheet" href="{% static 'css/bootstrap.css' %} ">
+<link rel="stylesheet" href=" {% static 'css/animate.css' %} ">
+<link rel="stylesheet" href=" {% static 'css/owl.carousel.min.css' %} ">
+
+<!--<link rel="stylesheet" href=" {% static "fonts/ionicons/css/ionicons.min.css" %} ">
+<link rel="stylesheet" href=" {% static "fonts/flaticon/font/flaticon.css" %}  ">
+<link rel="stylesheet" href="{% static "fonts/flaticon/font/flaticon.css" %}  ">-->
+<style>
+    dis.h1 {
+    display : none
+}
+body{
+    style="font-family:"Times New Roman";
+    font-style: italic;
+  }
+</style>
+<body>
+
+{% block content %}
+<div id="mathematics">
+    <ol type="1">
+        {% for question in question %}
+            {% if question.subject == 'Mathematics' %}
+            <li>{{ question.question_text }}
+                <ol type="a">
+                    <li>{{ question.option1 }}</li>
+                    <li>{{ question.option2 }}</li>
+                    <li>{{ question.option3 }}</li>
+                    <li>{{ question.options4 }}</li>
+                </ol>
+            </li>
+            {% elif question.subject == 'English' %}
+            <li>{{ question.question_text }}
+                <ol type="a">
+                    <li>{{ question.option1 }}</li>
+                    <li>{{ question.option2 }}</li>
+                    <li>{{ question.option3 }}</li>
+                    <li>{{ question.options4 }}</li>
+                </ol>
+            </li>
+            {% elif question.subject == 'Civic' %}
+            <li>{{ question.question_text }}
+                <ol type="a">
+                    <li>{{ question.option1 }}</li>
+                    <li>{{ question.option2 }}</li>
+                    <li>{{ question.option3 }}</li>
+                    <li>{{ question.options4 }}</li>
+                </ol>
+            </li>
+            {% endif %}
+
+        {% endfor %}
+    </ol>
+</div>
+{% endblock %}
+
+<!--
+<script src="{% static "js/jquery-3.2.1.min.js" %}"></script>
+<script src="{% static "js/jquery-migrate-3.0.0.js" %}"></script>
+<script src="{% static "js/popper.min.js" %}"></script>
+-->
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<!--
+<script src="{% static "js/owl.carousel.min.js" %}"></script>
+<script src="{% static "js/jquery.waypoints.min.js" %}"></script>
+<script src="{% static "js/jquery.stellar.min.js" %}"></script>-->
